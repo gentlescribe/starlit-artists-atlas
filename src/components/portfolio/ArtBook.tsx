@@ -81,7 +81,7 @@ function ExLibris() {
   return (
     <div className="parchment spine-shade-right relative flex h-full w-full flex-col items-center justify-center p-[12%] text-center">
       <p className="font-serif text-[0.6rem] uppercase tracking-[0.45em] text-ink-faded">Ex Libris</p>
-      <p className="mt-3 font-display text-[clamp(1rem,1.8vw,1.5rem)] italic text-ink">Amara Vale</p>
+      <p className="mt-3 font-display text-[clamp(1rem,1.8vw,1.5rem)] italic text-ink">Starrspawn</p>
       <span className="my-4 text-xs text-ink-faded">✦</span>
       <ol className="space-y-1 font-serif text-[clamp(0.65rem,0.95vw,0.85rem)] text-ink">
         {ARTWORKS.map((a) => (
