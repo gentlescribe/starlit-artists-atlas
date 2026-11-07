@@ -4,17 +4,17 @@ export function BioSection({ onNext }: { onNext: () => void }) {
   return (
     <section
       id="bio"
-      className="relative flex h-dvh snap-start snap-always flex-col items-center justify-center px-6 text-center"
+      className="relative flex h-dvh snap-start snap-always flex-col items-center justify-center px-6 pb-24 pt-8 text-center md:py-16"
     >
       <p className="animate-rise font-serif text-xs uppercase tracking-[0.5em] text-muted-foreground md:text-sm">
         Portfolio · Volume I
       </p>
 
       <h1
-        className="animate-rise mt-6 font-display text-6xl font-normal leading-none tracking-tight text-foreground md:text-8xl lg:text-9xl"
+        className="animate-rise mt-4 font-display text-5xl font-normal leading-none tracking-tight text-foreground sm:text-6xl md:mt-6 md:text-8xl lg:text-9xl"
         style={{ animationDelay: "0.15s" }}
       >
-        Amara <span className="italic">Vale</span>
+        Starr<span className="italic">spawn</span>
       </h1>
 
       <div
@@ -31,16 +31,17 @@ export function BioSection({ onNext }: { onNext: () => void }) {
         className="animate-rise mt-6 font-display text-xl italic text-foreground/90 md:text-2xl"
         style={{ animationDelay: "0.4s" }}
       >
-        Illustrator &amp; writer of quiet, celestial worlds
+        Writer, poet &amp; digital artist
       </h2>
 
       <p
-        className="animate-rise mt-6 max-w-xl font-serif text-lg leading-relaxed text-foreground/70 md:text-xl"
+        className="animate-rise mt-5 max-w-2xl font-serif text-base leading-relaxed text-foreground/70 md:mt-6 md:text-xl"
         style={{ animationDelay: "0.55s" }}
       >
-        I paint moths that carry galaxies and lighthouses that talk to nebulae. My work lives
-        between gouache, gold ink and the small hours of the night — half sketchbook, half
-        mythology, always looking up.
+        Muyideen Adekunle Alatise, aka Starrspawn, is a multidisciplinary artist — a writer, poet
+        and digital artist/painter. He is a 2025 Silver Award and 2026 Gold Award recipient of the
+        Royal Commonwealth Essay Competition (senior category), and his works have been featured
+        in Kiitan Creative Magazine.
       </p>
 
       <button
