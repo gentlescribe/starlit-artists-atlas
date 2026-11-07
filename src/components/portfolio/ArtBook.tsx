@@ -116,7 +116,7 @@ type Leaf = { front: ReactNode; back: ReactNode };
 function buildLeaves(): Leaf[] {
   const artLeaves: Leaf[] = [];
   for (let i = 0; i < ARTWORKS.length; i += 2) {
-    const front = ARTWORKS[i];
+    const front = ARTWORKS[i]!;
     const back = ARTWORKS[i + 1];
     artLeaves.push({
       front: <ArtPage art={front} side="front" pageNo={i + 3} />,
