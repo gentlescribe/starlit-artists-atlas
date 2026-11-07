@@ -4,7 +4,7 @@ export function BioSection({ onNext }: { onNext: () => void }) {
   return (
     <section
       id="bio"
-      className="relative flex h-dvh snap-start snap-always flex-col items-center justify-center px-6 py-16 text-center"
+      className="relative flex h-dvh snap-start snap-always flex-col items-center justify-center px-6 pb-24 pt-8 text-center md:py-16"
     >
       <p className="animate-rise font-serif text-xs uppercase tracking-[0.5em] text-muted-foreground md:text-sm">
         Portfolio · Volume I
