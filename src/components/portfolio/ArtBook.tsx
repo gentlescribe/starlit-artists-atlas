@@ -60,7 +60,7 @@ function Cover() {
         Studies
       </h3>
       <p className="mt-4 font-serif text-xs tracking-[0.3em] text-gold/70">VOL. I</p>
-      <span className="absolute inset-y-0 left-0 w-[6%] bg-gradient-to-r from-cover-deep to-transparent" />
+      <span className="absolute inset-y-0 left-0 w-[6%] bg-linear-to-r from-cover-deep to-transparent" />
     </div>
   );
 }
@@ -72,7 +72,7 @@ function BackCover() {
       <span className="font-serif text-[0.6rem] uppercase tracking-[0.4em] text-gold/70">
         A.V. Studio
       </span>
-      <span className="absolute inset-y-0 right-0 w-[6%] bg-gradient-to-l from-cover-deep to-transparent" />
+      <span className="absolute inset-y-0 right-0 w-[6%] bg-linear-to-l from-cover-deep to-transparent" />
     </div>
   );
 }
@@ -150,11 +150,6 @@ export function ArtBook() {
           className="relative h-full w-full"
           style={{ transform: `translateX(${shift})`, transition: `transform ${FLIP_MS}ms var(--ease-page)` }}
         >
-          {/* soft ground shadow under the open spread */}
-          <div
-            className="pointer-events-none absolute inset-x-[4%] -bottom-[4%] h-[8%] rounded-[50%] bg-cosmos opacity-80 blur-xl"
-            aria-hidden
-          />
           {LEAVES.map((leaf, i) => {
             const flipped = i < current;
             const z = i === flipping ? 50 : flipped ? i + 1 : total - i;
