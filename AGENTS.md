@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Portfolio UI lives in `src/components/portfolio/`; artwork and writing data sit in `content.ts` so content edits never touch component logic.
+- Workbench object sizes come from CSS variables (`--page-h`, `--page-w`, `--folder-w`, `--folder-h`) in `src/styles.css`, scaled by viewport units, so both snap sections stay exactly 100dvh.
+- The starfield is a single fixed layer behind the snap container, so the sky is continuous across sections.
