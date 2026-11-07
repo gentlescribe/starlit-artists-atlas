@@ -168,24 +168,18 @@ export function ArtBook() {
                   transform: flipped ? "rotateY(-180deg)" : "rotateY(0deg)",
                 }}
               >
-                <button
-                  type="button"
-                  tabIndex={-1}
-                  aria-hidden
+                <div
                   onClick={() => go(1)}
-                  className="leaf-face absolute inset-0 cursor-pointer overflow-hidden rounded-r-md text-left shadow-[var(--shadow-book)]"
+                  className="leaf-face absolute inset-0 cursor-pointer overflow-hidden rounded-r-md shadow-[var(--shadow-book)]"
                 >
                   {leaf.front}
-                </button>
-                <button
-                  type="button"
-                  tabIndex={-1}
-                  aria-hidden
+                </div>
+                <div
                   onClick={() => go(-1)}
-                  className="leaf-face leaf-back absolute inset-0 cursor-pointer overflow-hidden rounded-l-md text-left shadow-[var(--shadow-book)]"
+                  className="leaf-face leaf-back absolute inset-0 cursor-pointer overflow-hidden rounded-l-md shadow-[var(--shadow-book)]"
                 >
                   {leaf.back}
-                </button>
+                </div>
               </div>
             );
           })}
