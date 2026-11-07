@@ -12,7 +12,8 @@ export type Artwork = {
   src: string;
 };
 
-export const ARTWORKS: Artwork[] = [
+// The art book has exactly four plate pages (two leaves), so this is a fixed-length tuple.
+export const ARTWORKS: [Artwork, Artwork, Artwork, Artwork] = [
   { plate: "I", pageNo: 3, title: "The Luna Saint", medium: "Gouache & gold ink on cotton paper", year: "2025", src: moth },
   { plate: "II", pageNo: 4, title: "Keeper of the Nebula", medium: "Ink & watercolour wash", year: "2025", src: lighthouse },
   { plate: "III", pageNo: 5, title: "Crescent Lullaby", medium: "Gouache, gilt highlights", year: "2026", src: moon },
