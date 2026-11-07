@@ -110,7 +110,7 @@ export function WritingFolder() {
       {/* Front pocket */}
       <div className="kraft-pocket absolute inset-x-0 bottom-0 z-20 flex h-[20%] items-center justify-between rounded-b-lg px-[7%]">
         <span className="font-serif text-[0.6rem] uppercase tracking-[0.4em] text-ink/70">Writings</span>
-        <span className="rounded-sm border border-ink/30 px-2 py-0.5 font-type text-[0.6rem] text-ink/70">A.V. — 2026</span>
+        <span className="rounded-sm border border-ink/30 px-2 py-0.5 font-type text-[0.6rem] text-ink/70">Starrspawn — 2026</span>
       </div>
     </div>
   );
