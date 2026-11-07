@@ -7,15 +7,15 @@ import { WritingFolder } from "@/components/portfolio/WritingFolder";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Amara Vale — Illustrator & Writer of Celestial Worlds" },
+      { title: "Starrspawn — Writer, Poet & Digital Artist" },
       {
         name: "description",
-        content: "Portfolio of Amara Vale: gouache and gold-ink artworks in a turning art book, and notes, essays and lore in a writing folder.",
+        content: "Portfolio of Starrspawn (Muyideen Adekunle Alatise), award-winning writer, poet and digital artist — artworks, notes, essays and lore.",
       },
-      { property: "og:title", content: "Amara Vale — Celestial Studies" },
+      { property: "og:title", content: "Starrspawn — Writer, Poet & Digital Artist" },
       {
         property: "og:description",
-        content: "Flip through a sketchbook of cosmic artworks and read notes, essays and lore.",
+        content: "Flip through Starrspawn's art book and read his notes, essays and lore.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
