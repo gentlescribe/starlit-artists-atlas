@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { ARTWORKS, type Artwork } from "./content";
+import { ARTWORKS, CONTACT_EMAIL, type Artwork } from "./content";
 
 const FLIP_MS = 1000;
 
-function ArtPage({ art, side }: { art: Artwork; side: "front" | "back" }) {
+function ArtPage({ art, side, pageNo }: { art: Artwork; side: "front" | "back"; pageNo: number }) {
   return (
     <div
       className={`parchment relative flex h-full w-full flex-col px-[9%] pb-[7%] pt-[8%] ${
@@ -19,10 +19,10 @@ function ArtPage({ art, side }: { art: Artwork; side: "front" | "back" }) {
           <img
             src={art.src}
             alt={art.title}
-            width={768}
-            height={896}
+            width={1920}
+            height={1920}
             loading="lazy"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         </div>
         <figcaption className="mt-[6%] text-center">
@@ -30,7 +30,7 @@ function ArtPage({ art, side }: { art: Artwork; side: "front" | "back" }) {
             {art.title}
           </span>
           <span className="mt-0.5 block font-serif text-[0.6rem] leading-tight tracking-wide text-ink-faded">
-            {art.medium} · {art.year}
+            {art.medium}
           </span>
         </figcaption>
       </figure>
@@ -39,7 +39,7 @@ function ArtPage({ art, side }: { art: Artwork; side: "front" | "back" }) {
           side === "front" ? "right-[7%]" : "left-[7%]"
         }`}
       >
-        {art.pageNo}
+        {pageNo}
       </span>
     </div>
   );
@@ -70,7 +70,7 @@ function BackCover() {
     <div className="velvet-cover relative flex h-full w-full flex-col items-center justify-end rounded-l-md p-[12%] text-center">
       <div className="absolute inset-[6%] rounded-sm border border-gold/30" />
       <span className="font-serif text-[0.6rem] uppercase tracking-[0.4em] text-gold/70">
-        A.V. Studio
+        Starrspawn
       </span>
       <span className="absolute inset-y-0 right-0 w-[6%] bg-linear-to-l from-cover-deep to-transparent" />
     </div>
@@ -103,7 +103,9 @@ function Colophon() {
       <p className="font-serif text-[clamp(0.7rem,1vw,0.9rem)] leading-relaxed text-ink-faded">
         Originals &amp; commissions
         <br />
-        hello@amaravale.studio
+        <a href={`mailto:${CONTACT_EMAIL}`} onClick={(e) => e.stopPropagation()} className="underline-offset-2 hover:underline">
+          {CONTACT_EMAIL}
+        </a>
       </p>
     </div>
   );
@@ -111,12 +113,20 @@ function Colophon() {
 
 type Leaf = { front: ReactNode; back: ReactNode };
 
-const LEAVES: Leaf[] = [
-  { front: <Cover />, back: <ExLibris /> },
-  { front: <ArtPage art={ARTWORKS[0]} side="front" />, back: <ArtPage art={ARTWORKS[1]} side="back" /> },
-  { front: <ArtPage art={ARTWORKS[2]} side="front" />, back: <ArtPage art={ARTWORKS[3]} side="back" /> },
-  { front: <Colophon />, back: <BackCover /> },
-];
+function buildLeaves(): Leaf[] {
+  const artLeaves: Leaf[] = [];
+  for (let i = 0; i < ARTWORKS.length; i += 2) {
+    const front = ARTWORKS[i]!;
+    const back = ARTWORKS[i + 1];
+    artLeaves.push({
+      front: <ArtPage art={front} side="front" pageNo={i + 3} />,
+      back: back ? <ArtPage art={back} side="back" pageNo={i + 4} /> : <div className="parchment spine-shade-right h-full w-full" />,
+    });
+  }
+  return [{ front: <Cover />, back: <ExLibris /> }, ...artLeaves, { front: <Colophon />, back: <BackCover /> }];
+}
+
+const LEAVES: Leaf[] = buildLeaves();
 
 export function ArtBook() {
   const [current, setCurrent] = useState(0); // number of flipped leaves
