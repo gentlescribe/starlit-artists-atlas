@@ -1,23 +1,27 @@
-import moth from "@/assets/art-moth.jpg";
-import lighthouse from "@/assets/art-lighthouse.jpg";
-import moon from "@/assets/art-moon.jpg";
-import bloom from "@/assets/art-bloom.jpg";
+import waves from "@/assets/waves.png.asset.json";
+import wavesConcept from "@/assets/waves-concept.png.asset.json";
+import postCreateClarity from "@/assets/post-create-clarity.png.asset.json";
+import blues from "@/assets/blues.webp.asset.json";
+import starrgirl from "@/assets/starrgirl.webp.asset.json";
+import riot from "@/assets/riot.webp.asset.json";
+
+export const CONTACT_EMAIL = "starrspawn08@gmail.com";
 
 export type Artwork = {
   plate: string;
-  pageNo: number;
   title: string;
   medium: string;
-  year: string;
   src: string;
 };
 
-// The art book has exactly four plate pages (two leaves), so this is a fixed-length tuple.
-export const ARTWORKS: [Artwork, Artwork, Artwork, Artwork] = [
-  { plate: "I", pageNo: 3, title: "The Luna Saint", medium: "Gouache & gold ink on cotton paper", year: "2025", src: moth },
-  { plate: "II", pageNo: 4, title: "Keeper of the Nebula", medium: "Ink & watercolour wash", year: "2025", src: lighthouse },
-  { plate: "III", pageNo: 5, title: "Crescent Lullaby", medium: "Gouache, gilt highlights", year: "2026", src: moon },
-  { plate: "IV", pageNo: 6, title: "Night-Blooming Cereus", medium: "Botanical study, gold leaf", year: "2026", src: bloom },
+// Plates are laid out two per leaf (front + back) in the art book, in this order.
+export const ARTWORKS: Artwork[] = [
+  { plate: "I", title: "Waves", medium: "Digital painting", src: waves.url },
+  { plate: "II", title: "Waves (concept)", medium: "Digital painting", src: wavesConcept.url },
+  { plate: "III", title: "Post Create Clarity", medium: "Digital painting", src: postCreateClarity.url },
+  { plate: "IV", title: "Blues", medium: "Digital painting", src: blues.url },
+  { plate: "V", title: "Starrgirl", medium: "Digital painting", src: starrgirl.url },
+  { plate: "VI", title: "Riot", medium: "Digital painting", src: riot.url },
 ];
 
 export type WritingTab = "notes" | "essays" | "lore";
